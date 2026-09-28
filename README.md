@@ -484,7 +484,7 @@ Documentação do projeto.
 
 ---
 
-# 🛠️ Tecnologias
+# Tecnologias
 
 * HTML5
 * CSS3
@@ -540,133 +540,6 @@ A versão atual é uma **simulação local**, portanto:
 
 ---
 
-# 🔮 Possíveis melhorias
-
-Como próximas etapas, o projeto pode evoluir para uma aplicação industrial integrada.
-
-### Comunicação
-
-* Integração com CLP;
-* Modbus TCP;
-* OPC UA;
-* MQTT;
-* API REST;
-* Comunicação com dispositivos IoT.
-
-### Monitoramento
-
-* Gráficos em tempo real;
-* Histórico de temperatura;
-* Histórico de energia;
-* Registro de ciclos;
-* Alarmes;
-* Eventos;
-* Diagnóstico de sensores.
-
-### Segurança
-
-* Login de operadores;
-* Diferentes níveis de acesso;
-* Registro de ações;
-* Intertravamentos;
-* Alarmes de segurança;
-* Integração com sistema de parada de emergência.
-
-### Banco de dados
-
-Uma futura implementação poderia armazenar:
-
-```text
-Data/Hora
-Temperatura
-Setpoint
-Energia
-Setpoint de energia
-Tempo de ciclo
-Modo de operação
-Velocidade
-Alarmes
-Eventos
-Operador
-```
-
----
-
-# Arquitetura futura
-
-Uma possível arquitetura para transformar a simulação em um sistema real seria:
-
-```text
-┌───────────────────────────┐
-│        IHM WEB            │
-│                           │
-│ HTML + CSS + JavaScript   │
-└─────────────┬─────────────┘
-              │
-              │ Rede
-              ▼
-┌───────────────────────────┐
-│     SERVIDOR / API        │
-│                           │
-│ Comunicação + Segurança   │
-└─────────────┬─────────────┘
-              │
-              ▼
-┌───────────────────────────┐
-│           CLP             │
-│                           │
-│ Controle do processo      │
-└───────┬───────────┬───────┘
-        │           │
-        ▼           ▼
-   ┌────────┐   ┌──────────┐
-   │SENSORES │   │ATUADORES│
-   └────────┘   └──────────┘
-        │           │
-        ▼           ▼
- TEMPERATURA    AQUECIMENTO
- PRESSÃO        MOTORES
- OUTROS         VÁLVULAS
-```
-
----
-
-# Estado do projeto
-
-### Interface
-
-* [x] Interface da IHM
-* [x] Monitoramento de temperatura
-* [x] Monitoramento de energia
-* [x] Controle de tempo
-* [x] Setpoints
-* [x] Modos de operação
-* [x] Controle global de velocidade
-* [x] Indicadores de status
-* [x] Relógio
-* [x] Comandos de operação
-* [x] Parada de emergência simulada
-* [x] Atalhos de teclado
-
-### Automação
-
-* [x] Simulação de temperatura
-* [x] Simulação de energia
-* [x] Simulação de tempo
-* [x] Controle de estados do ciclo
-
-### Integração
-
-* [ ] CLP
-* [ ] Sensores reais
-* [ ] Atuadores reais
-* [ ] Banco de dados
-* [ ] Histórico
-* [ ] Sistema de usuários
-* [ ] Comunicação industrial
-
----
-
 ## Desenvolvimento
 
 Projeto desenvolvido para representar uma **Interface Homem-Máquina aplicada a uma Termocaldeira 4.0**, utilizando tecnologias web para visualização, controle e simulação do processo.
@@ -676,3 +549,4 @@ Projeto desenvolvido para representar uma **Interface Homem-Máquina aplicada a 
 ## TERMOCALDEIRA 4.0
 
 **Monitoramento • Controle • Automação • Indústria 4.0**
+**Programado Web Kauane Silva**
