@@ -34,10 +34,10 @@ A interface está dividida em quatro áreas principais:
 
 ```text
 ┌───────────────────────────────────────────────────────────┐
-│                    CABEÇALHO / STATUS                    │
+│                    CABEÇALHO / STATUS                     │
 ├──────────────┬────────────────────────────────────────────┤
 │              │                                            │
-│ MONITORAMENTO│          INSTRUMENTOS PRINCIPAIS            │
+│ MONITORAMENTO│          INSTRUMENTOS PRINCIPAIS           │
 │              │                                            │
 │ Temperatura  │   TEMPERATURA   TEMPO      ENERGIA         │
 │ Tempo        │                                            │
@@ -620,7 +620,7 @@ Uma possível arquitetura para transformar a simulação em um sistema real seri
         │           │
         ▼           ▼
    ┌────────┐   ┌──────────┐
-   │SENSORES │   │ATUADORES │
+   │SENSORES │   │ATUADORES│
    └────────┘   └──────────┘
         │           │
         ▼           ▼
