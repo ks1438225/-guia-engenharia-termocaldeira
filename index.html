@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IHM Termocaldeira 4.0</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <header class="topbar">
+
+        <div class="brand">
+
+            <div class="logo">
+                <img src="logo-aguia.png" alt="Águia Engenharia">
+            </div>
+
+            <div>
+                <div class="company">
+                   ÁGUIA ENGENHARIA
+                </div>
+
+                <div class="product">
+                    TERMOCALDEIRA <span>4.0</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="status-area">
+
+            <div class="status-item">
+                <span id="operationLed" class="led green"></span>
+                OPERAÇÃO
+            </div>
+
+            <div class="status-item">
+                <span id="peakLed" class="led red"></span>
+                PEAK
+            </div>
+
+            <div class="status-item">
+                <span id="sensorLed" class="led yellow"></span>
+                SENSOR
+            </div>
+
+            <div class="status-item">
+                <span id="faultLed" class="led fault"></span>
+                FALHA
+            </div>
+
+        </div>
+
+        <div class="clock">
+
+            <div>DATA/HORA</div>
+
+            <strong id="clockValue">
+                --/--/---- --:--:--
+            </strong>
+
+        </div>
+
+    </header>
+
+    <main class="layout">
+
+        <aside class="sidebar">
+
+            <div class="side-title">
+                MONITORAMENTO
+            </div>
+
+            <div class="side-card">
+
+                <div class="side-label">
+                    TEMPERATURA
+                </div>
+
+                <div class="side-value">
+                    <span id="sideTemp">25.0</span> °C
+                </div>
+
+                <div class="side-sp">
+                    SP <span id="sideTempSp">180</span> °C
+                </div>
+
+                <div class="mini-mode" id="sideTempMode">
+                    NORMAL
+                </div>
+
+            </div>
+
+            <div class="side-card">
+
+                <div class="side-label">
+                    TEMPO
+                </div>
+
+                <div class="side-value">
+                    <span id="sideTime">00:00</span>
+                </div>
+
+                <div class="side-sp">
+                    SP <span id="sideTimeSp">05:00</span>
+                </div>
+
+                <div class="mini-mode" id="sideTimeMode">
+                    NORMAL
+                </div>
+
+            </div>
+
+            <div class="side-card">
+
+                <div class="side-label">
+                    ENERGIA
+                </div>
+
+                <div class="side-value">
+                    <span id="sideEnergy">0.0</span> kW
+                </div>
+
+                <div class="side-sp">
+                    SP <span id="sideEnergySp">12</span> kW
+                </div>
+
+                <div class="mini-mode" id="sideEnergyMode">
+                    NORMAL
+                </div>
+
+            </div>
+
+        </aside>
+
+        <section class="center">
+
+            <div class="process-grid">
+
+                <div class="instrument" id="tempInstrument">
+
+                    <div class="instrument-head">
+                        <span>TEMPERATURA</span>
+                        <span class="unit">°C</span>
+                    </div>
+
+                    <div class="instrument-main">
+
+                        <div class="value" id="tempValue">
+                            25.0
+                        </div>
+
+                        <div class="target">
+                            SETPOINT
+                            <strong id="tempSpDisplay">180</strong>
+                        </div>
+
+                    </div>
+
+                    <input
+                        id="tempSp"
+                        type="range"
+                        min="20"
+                        max="250"
+                        value="180"
+                    >
+
+                    <div class="mode-row">
+
+                        <button data-target="temp" data-mode="slow">
+                            SLOW
+                        </button>
+
+                        <button
+                            data-target="temp"
+                            data-mode="normal"
+                            class="active"
+                        >
+                            NORM
+                        </button>
+
+                        <button data-target="temp" data-mode="fast">
+                            FAST
+                        </button>
+
+                        <button data-target="temp" data-mode="manual">
+                            MAN
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="instrument" id="timeInstrument">
+
+                    <div class="instrument-head">
+                        <span>TEMPO</span>
+                        <span class="unit">CICLO</span>
+                    </div>
+
+                    <div class="instrument-main">
+
+                        <div class="value" id="timeValue">
+                            00:00
+                        </div>
+
+                        <div class="target">
+                            SETPOINT
+                            <strong id="timeSpDisplay">
+                                05:00
+                            </strong>
+                        </div>
+
+                    </div>
+
+                    <input
+                        id="timeSp"
+                        type="range"
+                        min="30"
+                        max="1800"
+                        value="300"
+                    >
+
+                    <div class="mode-row">
+
+                        <button data-target="time" data-mode="slow">
+                            SLOW
+                        </button>
+
+                        <button
+                            data-target="time"
+                            data-mode="normal"
+                            class="active"
+                        >
+                            NORM
+                        </button>
+
+                        <button data-target="time" data-mode="fast">
+                            FAST
+                        </button>
+
+                        <button data-target="time" data-mode="manual">
+                            MAN
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="instrument" id="energyInstrument">
+
+                    <div class="instrument-head">
+                        <span>ENERGIA</span>
+                        <span class="unit">kW</span>
+                    </div>
+
+                    <div class="instrument-main">
+
+                        <div class="value" id="energyValue">
+                            0.0
+                        </div>
+
+                        <div class="target">
+                            SETPOINT
+                            <strong id="energySpDisplay">
+                                12
+                            </strong>
+                        </div>
+
+                    </div>
+
+                    <input
+                        id="energySp"
+                        type="range"
+                        min="1"
+                        max="30"
+                        value="12"
+                        step="0.5"
+                    >
+
+                    <div class="mode-row">
+
+                        <button data-target="energy" data-mode="slow">
+                            SLOW
+                        </button>
+
+                        <button
+                            data-target="energy"
+                            data-mode="normal"
+                            class="active"
+                        >
+                            NORM
+                        </button>
+
+                        <button data-target="energy" data-mode="fast">
+                            FAST
+                        </button>
+
+                        <button data-target="energy" data-mode="manual">
+                            MAN
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="control-panel">
+
+                <button id="startBtn" class="action start">
+                    INICIAR
+                </button>
+
+                <button id="stopBtn" class="action stop">
+                    PARAR
+                </button>
+
+                <button id="pauseBtn" class="action pause">
+                    PAUSAR
+                </button>
+
+                <button id="resumeBtn" class="action resume">
+                    RETOMAR
+                </button>
+
+                <button id="resetBtn" class="action reset">
+                    RESET
+                </button>
+
+                <button id="exitBtn" class="action exit">
+                    SAIR
+                </button>
+
+                <button id="estopBtn" class="action estop">
+                    E-STOP
+                </button>
+
+            </div>
+
+            <div class="system-message">
+
+                <span id="systemState">
+                    SISTEMA PRONTO
+                </span>
+
+                <span id="cycleState">
+                    CICLO PARADO
+                </span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="speedbar">
+
+        <div>
+            CONTROLE GLOBAL DE VELOCIDADE
+        </div>
+
+        <div class="speed-options">
+
+            <label>
+                <input
+                    type="radio"
+                    name="speed"
+                    value="0.5"
+                >
+                SLOW (50%)
+            </label>
+
+            <label>
+                <input
+                    type="radio"
+                    name="speed"
+                    value="1"
+                    checked
+                >
+                NORMAL (100%)
+            </label>
+
+            <label>
+                <input
+                    type="radio"
+                    name="speed"
+                    value="1.5"
+                >
+                FAST (150%)
+            </label>
+
+        </div>
+
+    </footer>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
