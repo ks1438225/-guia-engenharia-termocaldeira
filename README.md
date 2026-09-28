@@ -548,5 +548,4 @@ Projeto desenvolvido para representar uma **Interface Homem-Máquina aplicada a 
 
 ## TERMOCALDEIRA 4.0
 
-**Monitoramento • Controle • Automação • Indústria 4.0**
-**Programado Web Kauane Silva**
+**Monitoramento • Controle • Automação • Indústria 4.0 • Programado Web Kauane Silva**
